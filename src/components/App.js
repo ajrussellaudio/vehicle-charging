@@ -1,11 +1,19 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from "reactstrap";
+
+import ConnectedLocationsList from "../containers/ConnectedLocationsList";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>Electric Vehicle Charging Locations</h1>
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <ConnectedLocationsList />
+          </Col>
+          <Col lg={3}>Form</Col>
+        </Row>
+      </Container>
     );
   }
 }
