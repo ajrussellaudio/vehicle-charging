@@ -3,9 +3,10 @@ import {
   FETCH_LOCATIONS_SUCCESS,
   FETCH_LOCATIONS_FAILURE
 } from "./_types";
-import { thunkCreator } from "./utils";
+import { thunkCreator, urlWithOptions } from "./utils";
 
-const url = "/api/retrieve/registry/format/json";
+const baseUrl = "/api/retrieve/registry/format/json";
+const url = urlWithOptions(baseUrl, window.location.search);
 
 export const fetchLocations = () =>
   thunkCreator({
@@ -14,5 +15,5 @@ export const fetchLocations = () =>
       FETCH_LOCATIONS_SUCCESS,
       FETCH_LOCATIONS_FAILURE
     ],
-    promise: fetch(url, { mode: "no-cors" }).then(res => res.json())
+    promise: fetch(url).then(res => res.json())
   });

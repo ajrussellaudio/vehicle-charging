@@ -5,6 +5,7 @@
   "proxy": "http://chargepoints.dft.gov.uk",
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "query-string": "^5.1.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-redux": "^5.0.7",
